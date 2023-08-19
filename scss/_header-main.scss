@@ -1,0 +1,22 @@
+body > header {
+  display: flex;
+  justify-content: start;
+  padding: 2rem 1.5rem;
+  background: $color-header-pg;
+  box-shadow: 0 1px 10px 6px $color-header-pg-shadow;
+  border-bottom: $color-background 1.5px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  .dark & {
+    background: $color-header-pg-dark;
+    box-shadow: 0 1px 10px 10px $color-header-pg-shadow-dark;
+    border-bottom: $color-header-pg-border-dark 1.5px solid;
+  }
+
+  h1 {
+    margin-right: 2rem;
+  }
+}

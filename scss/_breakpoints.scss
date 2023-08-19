@@ -1,0 +1,46 @@
+@include breakpoint($bp-small) {
+  section {
+    padding: 2rem 2rem 3rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 2rem 2rem;
+    header {
+      margin-bottom: 0;
+    }
+  }
+
+  article {
+    min-width: 170px;
+    flex: 1 1 0;
+    margin: 0;
+  }
+
+  .container {
+    right: 7%;
+  }
+}
+
+@include breakpoint($bp-medium) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  section {
+    width: calc(100% / 3 - 1rem);
+  }
+}
+
+@include breakpoint($bp-large) {
+  article {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@include breakpoint(1250px) {
+  article {
+    min-width: 214px;
+  }
+}

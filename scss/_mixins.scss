@@ -1,0 +1,6 @@
+//mixins for breakpoints
+@mixin breakpoint($min-size) {
+  @media (min-width: $min-size) {
+    @content;
+  }
+}

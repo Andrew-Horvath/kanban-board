@@ -1,0 +1,246 @@
+//Typography Defaults =================
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: 300 1.4rem/1.2 $font-stack;
+  @include breakpoint($bp-small) {
+    font-size: 1.6rem;
+  }
+  @include breakpoint($bp-medium) {
+    font-size: 1.7rem;
+  }
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: $color-background;
+  .dark & {
+    color: $color-header-h1-dark;
+  }
+  @include breakpoint($bp-small) {
+    font-size: 2.6rem;
+  }
+
+  @include breakpoint($bp-medium) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: $color-h2;
+  .dark & {
+    color: $color-h2-dark;
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: $color-h3;
+  .dark & {
+    color: $color-h3-dark;
+  }
+
+  @include breakpoint($bp-small) {
+    font-size: 1.8rem;
+  }
+
+  @include breakpoint($bp-medium) {
+    font-size: 2rem;
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: 2.2rem;
+  }
+}
+
+/* prettier-ignore */
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+article {
+  letter-spacing: 0.14rem;
+  color: $color-task-text;
+  .dark & {
+    color: lighten($color-task-text, 90%);
+  }
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+//dark/light mode toggle specific settings
+.light-icon,
+.dark-icon {
+  font-size: 0rem;
+}
+
+.light-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 3rem;
+  content: "\f185";
+  color: $color-light-icon;
+  @include breakpoint($bp-small) {
+    font-size: 3.5rem;
+  }
+  @include breakpoint($bp-medium) {
+    font-size: 4rem;
+  }
+}
+
+.dark-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2.5rem;
+  content: "\f186";
+  color: $color-dark-icon;
+  @include breakpoint($bp-small) {
+    font-size: 3rem;
+  }
+  @include breakpoint($bp-medium) {
+    font-size: 3.5rem;
+  }
+}
+
+//section specific settings
+.button-add {
+  font-size: 0rem;
+  color: $color-button-add;
+  .dark & {
+    color: $color-h2-dark;
+  }
+  &:hover {
+    color: $color-hover-button;
+    .dark & {
+      color: rgba(129, 207, 255, 1);
+    }
+  }
+  &::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.8rem;
+    content: "\f067";
+
+    @include breakpoint($bp-medium) {
+      font-size: 2rem;
+    }
+  }
+}
+
+//article specific settings
+time {
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $color-time;
+  &::before {
+    content: "due: ";
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    color: $color-task-text;
+    .dark & {
+      color: $color-task-text-dark;
+    }
+  }
+
+  .dark & {
+    color: $color-time-dark;
+  }
+
+  @include breakpoint($bp-medium) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: 1.7rem;
+  }
+}
+
+//add task form specific settings
+#form-title {
+  font-size: 1.7rem;
+  color: $color-h3-form;
+  @include breakpoint($bp-small) {
+    font-size: 2rem;
+  }
+  @include breakpoint($bp-medium) {
+    font-size: 2.2rem;
+  }
+  @include breakpoint($bp-large) {
+    font-size: 2.5rem;
+  }
+}
+
+label {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+textarea {
+  font-family: $font-stack;
+}
+
+::placeholder {
+  @extend %inputs-placeholder;
+}
+
+#due-date {
+  @extend %inputs-placeholder;
+}
+
+input,
+textarea,
+#due-date:valid {
+  color: $color-form-inputs-text;
+  &.error {
+    color: lighten($color-form-inputs-text-error, 40%);
+  }
+  .dark & {
+    color: lighten($color-form-inputs-text, 70%);
+  }
+}
+
+div > button {
+  color: $color-form-button-text;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  &:hover {
+    color: $color-form-button-hover;
+  }
+  @include breakpoint($bp-small) {
+    font-size: 1.6rem;
+  }
+  @include breakpoint($bp-medium) {
+    font-size: 1.8rem;
+  }
+  @include breakpoint($bp-large) {
+    font-size: 2rem;
+  }
+}
+
+.errorMsg {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: $color-form-error;
+  .dark & {
+    color: lighten($color-form-error, 20%);
+  }
+}

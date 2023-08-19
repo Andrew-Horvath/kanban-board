@@ -1,0 +1,808 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+/* CSS Reset =========================== */
+/* prettier-ignore */
+body, nav, section, article, footer, h1, h2, h3, h4, h5, h6, p, a, ul, li, dt, dd, address, figure, figcaption, form, fieldset, input, select, textarea {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 100%;
+  text-decoration: none;
+  font-weight: normal;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*!
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+/*!
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../assets/webfonts/fa-solid-900.eot");
+  src: url("../assets/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../assets/webfonts/fa-solid-900.woff2") format("woff2"), url("../assets/webfonts/fa-solid-900.woff") format("woff"), url("../assets/webfonts/fa-solid-900.ttf") format("truetype"), url("../assets/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+/*!
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../assets/webfonts/fa-regular-400.eot");
+  src: url("../assets/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../assets/webfonts/fa-regular-400.woff2") format("woff2"), url("../assets/webfonts/fa-regular-400.woff") format("woff"), url("../assets/webfonts/fa-regular-400.ttf") format("truetype"), url("../assets/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+.container {
+  position: absolute;
+  right: 7%;
+  top: 25%;
+}
+
+.dark-logo {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -webkit-transform: translateY(70%) rotateZ(50deg);
+          transform: translateY(70%) rotateZ(50deg);
+  -webkit-transition: all 1.1s ease-out;
+  transition: all 1.1s ease-out;
+}
+
+.light-logo {
+  opacity: 1;
+  -webkit-transition: all 1.1s ease-out;
+  transition: all 1.1s ease-out;
+}
+
+.animate-light {
+  opacity: 0;
+  -webkit-transform: translate(30%, 50%) rotateZ(100deg);
+          transform: translate(30%, 50%) rotateZ(100deg);
+}
+
+.animate-dark {
+  opacity: 1;
+  -webkit-transform: translateY(5%) rotateZ(0deg);
+          transform: translateY(5%) rotateZ(0deg);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: 300 1.4rem/1.2 "Roboto", sans-serif;
+}
+
+@media (min-width: 500px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 850px) {
+  body {
+    font-size: 1.7rem;
+  }
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #040052;
+}
+
+.dark h1 {
+  color: rgba(204, 204, 204, 0.849);
+}
+
+@media (min-width: 500px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 850px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #040052;
+}
+
+.dark h2 {
+  color: #d7d7d7;
+}
+
+@media (min-width: 1150px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: #040052;
+}
+
+.dark h3 {
+  color: rgba(215, 215, 215, 0.8);
+}
+
+@media (min-width: 500px) {
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 850px) {
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  h3 {
+    font-size: 2.2rem;
+  }
+}
+
+/* prettier-ignore */
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+article {
+  letter-spacing: 0.14rem;
+  color: rgba(10, 10, 10, 0.6);
+}
+
+.dark article {
+  color: rgba(240, 240, 240, 0.6);
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+.light-icon,
+.dark-icon {
+  font-size: 0rem;
+}
+
+.light-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 3rem;
+  content: "\f185";
+  color: #faa506;
+}
+
+@media (min-width: 500px) {
+  .light-icon::before {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 850px) {
+  .light-icon::before {
+    font-size: 4rem;
+  }
+}
+
+.dark-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2.5rem;
+  content: "\f186";
+  color: #81cfff;
+}
+
+@media (min-width: 500px) {
+  .dark-icon::before {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 850px) {
+  .dark-icon::before {
+    font-size: 3.5rem;
+  }
+}
+
+.button-add {
+  font-size: 0rem;
+  color: #040052;
+}
+
+.dark .button-add {
+  color: #d7d7d7;
+}
+
+.button-add:hover {
+  color: white;
+}
+
+.dark .button-add:hover {
+  color: #81cfff;
+}
+
+.button-add::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.8rem;
+  content: "\f067";
+}
+
+@media (min-width: 850px) {
+  .button-add::before {
+    font-size: 2rem;
+  }
+}
+
+time {
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #e20404;
+}
+
+time::before {
+  content: "due: ";
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  color: rgba(10, 10, 10, 0.6);
+}
+
+.dark time::before {
+  color: rgba(180, 180, 180, 0.8);
+}
+
+.dark time {
+  color: #be3f6a;
+}
+
+@media (min-width: 850px) {
+  time {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  time {
+    font-size: 1.7rem;
+  }
+}
+
+#form-title {
+  font-size: 1.7rem;
+  color: #81cfff;
+}
+
+@media (min-width: 500px) {
+  #form-title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 850px) {
+  #form-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  #form-title {
+    font-size: 2.5rem;
+  }
+}
+
+label {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+textarea {
+  font-family: "Roboto", sans-serif;
+}
+
+input,
+textarea,
+#due-date:valid {
+  color: #075ce4;
+}
+
+input.error,
+textarea.error,
+#due-date:valid.error {
+  color: #727272;
+}
+
+.dark input, .dark
+textarea, .dark
+#due-date:valid {
+  color: white;
+}
+
+div > button {
+  color: #81cfff;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+div > button:hover {
+  color: #a0eb4b;
+}
+
+@media (min-width: 500px) {
+  div > button {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 850px) {
+  div > button {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  div > button {
+    font-size: 2rem;
+  }
+}
+
+.errorMsg {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: rgba(226, 4, 4, 0.5);
+}
+
+.dark .errorMsg {
+  color: rgba(252, 80, 80, 0.5);
+}
+
+html {
+  --top-spacing: 8.25rem;
+  scroll-padding-top: var(--top-spacing);
+}
+
+@media (min-width: 500px) {
+  html {
+    --top-spacing: 9rem;
+  }
+}
+
+@media (min-width: 850px) {
+  html {
+    --top-spacing: 9.25rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  html {
+    --top-spacing: 9.75rem;
+  }
+}
+
+::-webkit-input-placeholder, #due-date {
+  font: 400 1.5rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+
+:-ms-input-placeholder, #due-date {
+  font: 400 1.5rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+
+::-ms-input-placeholder, #due-date {
+  font: 400 1.5rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+
+::placeholder, #due-date {
+  font: 400 1.5rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+
+.error::-webkit-input-placeholder, .error#due-date {
+  color: #0c0c0c;
+}
+
+.error:-ms-input-placeholder, .error#due-date {
+  color: #0c0c0c;
+}
+
+.error::-ms-input-placeholder, .error#due-date {
+  color: #0c0c0c;
+}
+
+.error::placeholder, .error#due-date {
+  color: #0c0c0c;
+}
+
+.dark .error::-webkit-input-placeholder, .dark .error#due-date {
+  color: #0c0c0c;
+}
+
+.dark .error:-ms-input-placeholder, .dark .error#due-date {
+  color: #0c0c0c;
+}
+
+.dark .error::-ms-input-placeholder, .dark .error#due-date {
+  color: #0c0c0c;
+}
+
+.dark .error::placeholder, .dark .error#due-date {
+  color: #0c0c0c;
+}
+
+.dark ::-webkit-input-placeholder, .dark #due-date {
+  color: white;
+}
+
+.dark :-ms-input-placeholder, .dark #due-date {
+  color: white;
+}
+
+.dark ::-ms-input-placeholder, .dark #due-date {
+  color: white;
+}
+
+.dark ::placeholder, .dark #due-date {
+  color: white;
+}
+
+@media (min-width: 500px) {
+  ::-webkit-input-placeholder, #due-date {
+    font-size: 1.6rem;
+  }
+  :-ms-input-placeholder, #due-date {
+    font-size: 1.6rem;
+  }
+  ::-ms-input-placeholder, #due-date {
+    font-size: 1.6rem;
+  }
+  ::placeholder, #due-date {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 850px) {
+  ::-webkit-input-placeholder, #due-date {
+    font-size: 1.7rem;
+  }
+  :-ms-input-placeholder, #due-date {
+    font-size: 1.7rem;
+  }
+  ::-ms-input-placeholder, #due-date {
+    font-size: 1.7rem;
+  }
+  ::placeholder, #due-date {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  ::-webkit-input-placeholder, #due-date {
+    font-size: 1.8rem;
+  }
+  :-ms-input-placeholder, #due-date {
+    font-size: 1.8rem;
+  }
+  ::-ms-input-placeholder, #due-date {
+    font-size: 1.8rem;
+  }
+  ::placeholder, #due-date {
+    font-size: 1.8rem;
+  }
+}
+
+#backlog {
+  --color-category: rgba(129, 207, 255, 1);
+  --color-category-dark: rgba(46, 102, 139, 1);
+}
+
+#implementation {
+  --color-category: rgba(235, 169, 255, 1);
+  --color-category-dark: rgb(142, 95, 156, 1);
+}
+
+#complete {
+  --color-category: rgba(160, 235, 75, 1);
+  --color-category-dark: rgba(80, 136, 6, 1);
+}
+
+section {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1.4rem;
+  border-radius: 5px;
+  background-color: var(--color-category);
+}
+
+section header {
+  margin-bottom: 2rem;
+}
+
+.dark section {
+  background-color: var(--color-category-dark);
+}
+
+h2 {
+  padding: 0.75rem;
+  display: inline;
+  margin-right: 1rem;
+}
+
+article {
+  margin: 0 auto 2rem auto;
+  padding: 1rem 0.75rem;
+  -webkit-box-shadow: 10px 10px 10px 1px rgba(4, 0, 82, 0.4);
+          box-shadow: 10px 10px 10px 1px rgba(4, 0, 82, 0.4);
+  border-radius: 2px;
+  background: white;
+  position: relative;
+}
+
+.dark article {
+  background: rgba(12, 12, 12, 0.6);
+}
+
+article > h3 {
+  margin: 1rem 0 0 1.5rem;
+}
+
+p {
+  margin: 1.5rem 0.5rem 4rem 1.5rem;
+}
+
+time {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1rem;
+}
+
+body > header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 2rem 1.5rem;
+  background: #f4f4f4;
+  -webkit-box-shadow: 0 1px 10px 6px rgba(129, 207, 255, 0.75);
+          box-shadow: 0 1px 10px 6px rgba(129, 207, 255, 0.75);
+  border-bottom: #040052 1.5px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.dark body > header {
+  background: #383838;
+  -webkit-box-shadow: 0 1px 10px 10px #6c6c6c;
+          box-shadow: 0 1px 10px 10px #6c6c6c;
+  border-bottom: rgba(12, 12, 12, 0.6) 1.5px solid;
+}
+
+body > header h1 {
+  margin-right: 2rem;
+}
+
+@media (min-width: 500px) {
+  section {
+    padding: 2rem 2rem 3rem 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    gap: 2rem 2rem;
+  }
+  section header {
+    margin-bottom: 0;
+  }
+  article {
+    min-width: 170px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+    margin: 0;
+  }
+  .container {
+    right: 7%;
+  }
+}
+
+@media (min-width: 850px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  section {
+    width: calc(100% / 3 - 1rem);
+  }
+}
+
+@media (min-width: 1150px) {
+  article {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width: 1250px) {
+  article {
+    min-width: 214px;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.dark .modal {
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.modal div {
+  margin: 0 0 2rem 0;
+  position: relative;
+}
+
+#form-title {
+  margin: 0 0 1rem 0.5rem;
+}
+
+form {
+  background: transparent;
+  margin: 2% auto 0;
+  padding: 1rem;
+  width: calc(100vw - 5%);
+  max-width: 62.5rem;
+}
+
+label {
+  visibility: hidden;
+  margin-bottom: 0.5rem;
+}
+
+fieldset {
+  background: gainsboro;
+  border: none;
+  padding: 2.5rem;
+}
+
+.dark fieldset {
+  background: #505050;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border: none;
+  margin: 0.5rem 0;
+}
+
+.dark input, .dark
+textarea {
+  background: #9d9d9d;
+}
+
+input:focus,
+textarea:focus {
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 0 10px #81cfff;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 0 10px #81cfff;
+  outline: none;
+}
+
+.button-submit,
+.button-cancel {
+  padding-bottom: 1.1rem;
+  margin: 1.5rem 2rem 0 0;
+}
+
+.button-submit:hover,
+.button-cancel:hover {
+  border-bottom: 1px solid #a0eb4b;
+}
+
+.error {
+  background: rgba(226, 4, 4, 0.5);
+}
+
+.dark .error {
+  background: rgba(251, 15, 15, 0.5);
+}
+
+.error:focus {
+  border-color: rgba(226, 4, 4, 0.5);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(226, 4, 4, 0.5);
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(226, 4, 4, 0.5);
+}
+
+.dark .error:focus {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.errorMsg {
+  visibility: visible;
+}
+
+html {
+  background: #040052;
+}
+
+html.dark {
+  background: #121212;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  padding: 0 1rem 1rem 1rem;
+  height: 100%;
+  margin-top: var(--top-spacing);
+}
+
+header {
+  width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  display: inline;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */

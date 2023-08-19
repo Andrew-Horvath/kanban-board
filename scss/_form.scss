@@ -1,0 +1,88 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: $color-modal-overlay;
+  .dark & {
+    background: lighten($color-modal-overlay, 10%);
+  }
+  div {
+    margin: 0 0 2rem 0;
+    position: relative;
+  }
+}
+
+#form-title {
+  margin: 0 0 1rem 0.5rem;
+}
+
+form {
+  background: transparent;
+  margin: 2% auto 0;
+  padding: 1rem;
+  width: calc(100vw - 5%);
+  max-width: 62.5rem;
+}
+
+label {
+  visibility: hidden;
+  margin-bottom: 0.5rem;
+}
+
+fieldset {
+  background: darken($color-fieldset-bg, 5%);
+  .dark & {
+    background: darken($color-fieldset-bg, 60%);
+  }
+  border: none;
+  padding: 2.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border: none;
+  margin: 0.5rem 0;
+  .dark & {
+    background: darken($color-fieldset-bg, 30%);
+  }
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25),
+    0 0 10px rgba(129, 207, 255, 1);
+  outline: none;
+}
+
+.button-submit,
+.button-cancel {
+  padding-bottom: 1.1rem;
+  margin: 1.5rem 2rem 0 0;
+  &:hover {
+    border-bottom: 1px solid $color-form-button-border;
+  }
+}
+
+.error {
+  background: $color-form-error-bg;
+  .dark & {
+    background: lighten($color-form-error-bg, 7%);
+  }
+
+  &:focus {
+    border-color: $color-form-error;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px $color-form-error;
+    .dark & {
+      border-color: darken($color-form-error, 50%);
+    }
+  }
+}
+
+.errorMsg {
+  visibility: visible;
+}

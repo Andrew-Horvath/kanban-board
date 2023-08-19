@@ -1,0 +1,39 @@
+%top-scrolling {
+  --top-spacing: 8.25rem;
+  scroll-padding-top: var(--top-spacing);
+  @include breakpoint($bp-small) {
+    --top-spacing: 9rem;
+  }
+  @include breakpoint($bp-medium) {
+    --top-spacing: 9.25rem;
+  }
+  @include breakpoint($bp-large) {
+    --top-spacing: 9.75rem;
+  }
+}
+
+%inputs-placeholder {
+  font: 400 1.5rem $font-stack;
+  text-transform: uppercase;
+  color: lighten($color-form-placeholder, 10%);
+  &.error {
+    color: $color-form-inputs-text-error;
+    .dark & {
+      color: $color-form-inputs-text-error;
+    }
+  }
+
+  .dark & {
+    color: lighten($color-form-placeholder, 75%);
+  }
+
+  @include breakpoint($bp-small) {
+    font-size: 1.6rem;
+  }
+  @include breakpoint($bp-medium) {
+    font-size: 1.7rem;
+  }
+  @include breakpoint($bp-large) {
+    font-size: 1.8rem;
+  }
+}

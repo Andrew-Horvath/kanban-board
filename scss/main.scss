@@ -1,0 +1,115 @@
+// main.scss
+//font import
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+//variables
+//fonts
+$font-stack: "Roboto", sans-serif;
+
+//color palette
+//page header
+$color-header-pg: rgba(244, 244, 244, 1);
+$color-header-pg-shadow: rgba(129, 207, 255, 0.75);
+$color-header-pg-border-dark: rgba(12, 12, 12, 0.6);
+$color-light-icon: rgba(250, 165, 6, 1);
+$color-dark-icon: rgba(129, 207, 255, 1);
+
+//page bg
+$color-background: rgba(004, 000, 082, 1);
+
+//section
+$color-h2: rgba(004, 000, 082, 1);
+$color-hover-button: rgba(255, 255, 255, 1);
+
+//colors for tasks
+$color-task-background: rgba(255, 255, 255, 1);
+$color-shadow-task: rgba(004, 000, 082, 0.2);
+$color-h3: rgba(004, 000, 082, 1);
+$color-task-text: rgba(10, 10, 10, 0.6);
+$color-time: rgb(226, 4, 4);
+
+//colors form
+$color-modal-overlay: rgba(0, 0, 0, 0.9);
+$color-h3-form: rgba(129, 207, 255, 1);
+$color-fieldset-bg: rgba(233, 233, 233, 1);
+$color-form-inputs-text: rgba(7, 92, 228, 1);
+$color-form-inputs-text-error: rgba(12, 12, 12, 1);
+$color-form-placeholder: rgba(100, 100, 100, 1);
+$color-focus-shadow: rgba(47, 8, 221, 0.5);
+$color-inputs-border: rgba(004, 000, 082, 1);
+$color-form-button-text: rgba(129, 207, 255, 1);
+$color-form-button-hover: rgba(160, 235, 75, 1);
+$color-form-button-border: rgba(160, 235, 75, 1);
+$color-form-error: rgba(226, 4, 4, 0.5);
+$color-form-error-bg: rgba(226, 4, 4, 0.5);
+
+//dark palette
+$color-header-pg-dark: rgba(56, 56, 56, 1);
+$color-header-pg-shadow-dark: rgba(108, 108, 108, 1);
+$color-header-h1-dark: rgba(204, 204, 204, 0.849);
+
+//page bg
+$color-background-dark: rgba(18, 18, 18, 1);
+
+//section
+$color-h2-dark: rgba(215, 215, 215, 1);
+$color-button-add: rgba(004, 000, 082, 1);
+$color-hover-button: rgba(255, 255, 255, 1);
+
+//colors for tasks
+$color-task-background-dark: rgba(12, 12, 12, 0.6);
+$color-shadow-task: rgba(004, 000, 082, 0.4);
+$color-h3-dark: rgba(215, 215, 215, 0.8);
+$color-hover-button-dark: rgba(235, 235, 235, 0.8);
+$color-task-text-dark: rgba(180, 180, 180, 0.8);
+$color-time-dark: #be3f6a;
+
+//breakpoint sizes
+$bp-small: 500px;
+$bp-medium: 850px;
+$bp-large: 1150px;
+
+//partial style sheets
+@import "css-reset";
+@import "guides";
+@import "scss/fontawesome.scss";
+@import "scss/solid.scss";
+@import "scss/regular.scss";
+@import "toggle.scss";
+@import "mixins";
+@import "typography";
+@import "placeholders";
+@import "section";
+@import "task";
+@import "header-main";
+@import "breakpoints";
+@import "form";
+
+html {
+  @extend %top-scrolling;
+  background: $color-background;
+  &.dark {
+    background: $color-background-dark;
+  }
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  padding: 0 1rem 1rem 1rem;
+  height: 100%;
+  margin-top: var(--top-spacing);
+}
+
+header {
+  width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  display: inline;
+  cursor: pointer;
+}

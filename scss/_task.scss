@@ -1,0 +1,28 @@
+//formatting for article to be each individual tasks
+
+article {
+  margin: 0 auto 2rem auto;
+  padding: 1rem 0.75rem;
+  box-shadow: 10px 10px 10px 1px $color-shadow-task;
+  border-radius: 2px;
+  background: $color-task-background;
+  position: relative;
+
+  .dark & {
+    background: $color-task-background-dark;
+  }
+}
+
+article > h3 {
+  margin: 1rem 0 0 1.5rem;
+}
+
+p {
+  margin: 1.5rem 0.5rem 4rem 1.5rem;
+}
+
+time {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1rem;
+}
